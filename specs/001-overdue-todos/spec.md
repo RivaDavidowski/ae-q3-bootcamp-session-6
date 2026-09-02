@@ -8,6 +8,12 @@
 
 **Input**: User description: "Support for Overdue Todo Items"
 
+## Clarifications
+
+### Session 2026-09-02
+
+- Q: How should an overdue task communicate its status without relying on color? → A: Display an overdue icon with a visible Overdue text label.
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Identify Overdue Work (Priority: P1)
@@ -69,11 +75,11 @@ its completion status, verifying that the overdue identification updates each ti
   its due date is before the current calendar date.
 - **FR-002**: The system MUST not identify a task as overdue when it has no due date,
   is due on or after the current calendar date, or is complete.
-- **FR-003**: The todo list MUST provide a clear visual indicator for every overdue
-  task while retaining the existing task title, due date, completion control, and
-  actions.
-- **FR-004**: The overdue indicator MUST communicate the task's status through a
-  non-color cue that is available to users of assistive technology.
+- **FR-003**: The todo list MUST provide an overdue icon and visible `Overdue` text
+  label for every overdue task while retaining the existing task title, due date,
+  completion control, and actions.
+- **FR-004**: The visible `Overdue` label MUST be available to users of assistive
+  technology and communicate the task's status without relying on color.
 - **FR-005**: The overdue indicator MUST update when a task's due date or completion
   status changes and when the list is next viewed on a later calendar date.
 - **FR-006**: The system MUST preserve the existing creation-date ordering of the todo
