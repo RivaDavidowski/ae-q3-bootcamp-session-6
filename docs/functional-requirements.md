@@ -44,6 +44,14 @@ A simple, single-user todo application that allows users to create, manage, and 
   - Users can update the title and due date after creation
   - Changes are persisted immediately
 
+#### 1.6 Overdue Todo Status
+- **Description**: Incomplete todos with a past due date are visually identified
+- **Behavior**:
+  - Incomplete todos whose due date precedes the user's local calendar date render a visible `Overdue` label and warning icon
+  - Overdue state is derived in the frontend from local calendar dates
+  - Completed, undated, due-today, or future-due items do not render an overdue indicator
+  - Creation-date ordering and API structures remain unchanged
+
 ### 2. Persistence
 
 - **Storage Mechanism**: Use the existing backend persistence mechanism (Express.js API)

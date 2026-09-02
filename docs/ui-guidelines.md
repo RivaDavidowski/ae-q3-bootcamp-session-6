@@ -102,6 +102,11 @@ All spacing follows an 8px grid system for consistency:
 - Title text: Strike-through with reduced opacity (0.6)
 - Checkbox: Marked/filled with success color
 
+#### Overdue State
+- Renders visible `Overdue` text label and supplementary warning icon (aria-hidden)
+- Container: Border and background accent using `--overdue-border` and `--overdue-bg`
+- Badge text & due date text: Colored using `--overdue-color`
+
 ### Input Fields
 - **Border**: 1px solid border color
 - **Border Radius**: 4px

@@ -19,8 +19,8 @@ description: "Task list for overdue todo items implementation"
 
 **Purpose**: Confirm the existing workspace and feature file targets before changing behavior.
 
-- [ ] T001 Verify frontend package scripts and test command expectations in package.json and packages/frontend/package.json
-- [ ] T002 Confirm existing todo card, list, and theme file locations in packages/frontend/src/components/TodoCard.js, packages/frontend/src/components/TodoList.js, packages/frontend/src/App.css, and packages/frontend/src/styles/theme.css
+- [X] T001 Verify frontend package scripts and test command expectations in package.json and packages/frontend/package.json
+- [X] T002 Confirm existing todo card, list, and theme file locations in packages/frontend/src/components/TodoCard.js, packages/frontend/src/components/TodoList.js, packages/frontend/src/App.css, and packages/frontend/src/styles/theme.css
 
 ---
 
@@ -30,7 +30,7 @@ description: "Task list for overdue todo items implementation"
 
 **CRITICAL**: No user story work can begin until this phase is complete.
 
-- [ ] T003 Create the frontend utility test directory and implementation directory at packages/frontend/src/utils/__tests__/ and packages/frontend/src/utils/
+- [X] T003 Create the frontend utility test directory and implementation directory at packages/frontend/src/utils/__tests__/ and packages/frontend/src/utils/
 
 **Checkpoint**: Foundation ready - user story implementation can now begin.
 
@@ -44,16 +44,16 @@ description: "Task list for overdue todo items implementation"
 
 ### Tests for User Story 1
 
-- [ ] T004 [P] [US1] Add local date parsing and overdue decision tests for past-due, due-today, future-due, undated, and completed todos in packages/frontend/src/utils/__tests__/dateUtils.test.js
-- [ ] T005 [P] [US1] Extend card output tests for visible `Overdue` text, supplementary icon, preserved title/due date/actions, and non-overdue states in packages/frontend/src/components/__tests__/TodoCard.test.js
+- [X] T004 [P] [US1] Add local date parsing and overdue decision tests for past-due, due-today, future-due, undated, and completed todos in packages/frontend/src/utils/__tests__/dateUtils.test.js
+- [X] T005 [P] [US1] Extend card output tests for visible `Overdue` text, supplementary icon, preserved title/due date/actions, non-overdue states, and accessible exposure of the `Overdue` text (queryable by accessible role/text, icon marked decorative) in packages/frontend/src/components/__tests__/TodoCard.test.js
 
 ### Implementation for User Story 1
 
-- [ ] T006 [US1] Implement local `YYYY-MM-DD` parsing, local-today normalization, due-date formatting, and `isTodoOverdue` logic in packages/frontend/src/utils/dateUtils.js
-- [ ] T007 [US1] Update packages/frontend/src/components/TodoCard.js to import date utilities, render the overdue icon plus visible `Overdue` label for overdue todos, and preserve existing title, due date, checkbox, edit, and delete controls
-- [ ] T008 [US1] Add theme-token-backed overdue indicator and card state styles in packages/frontend/src/App.css
-- [ ] T009 [US1] Add or reuse light and dark theme custom properties needed by the overdue styles in packages/frontend/src/styles/theme.css
-- [ ] T010 [US1] Run the focused frontend validation command from specs/001-overdue-todos/quickstart.md against packages/frontend/src/utils/__tests__/dateUtils.test.js and packages/frontend/src/components/__tests__/TodoCard.test.js
+- [X] T006 [US1] Implement local `YYYY-MM-DD` parsing, local-today normalization, due-date formatting, and `isTodoOverdue` logic in packages/frontend/src/utils/dateUtils.js
+- [X] T007 [US1] Update packages/frontend/src/components/TodoCard.js to import date utilities, render the overdue icon plus visible `Overdue` label for overdue todos, and preserve existing title, due date, checkbox, edit, and delete controls
+- [X] T008 [US1] Add theme-token-backed overdue indicator and card state styles in packages/frontend/src/App.css
+- [X] T009 [US1] Add or reuse light and dark theme custom properties needed by the overdue styles in packages/frontend/src/styles/theme.css
+- [X] T010 [US1] Run the focused frontend validation command from specs/001-overdue-todos/quickstart.md against packages/frontend/src/utils/__tests__/dateUtils.test.js and packages/frontend/src/components/__tests__/TodoCard.test.js
 
 **Checkpoint**: User Story 1 is functional and testable independently.
 
@@ -67,15 +67,15 @@ description: "Task list for overdue todo items implementation"
 
 ### Tests for User Story 2
 
-- [ ] T011 [P] [US2] Add rerender-based TodoCard tests for due date and completion changes in packages/frontend/src/components/__tests__/TodoCard.test.js
-- [ ] T012 [P] [US2] Add reference-date boundary tests proving a due-today todo becomes overdue when rendered on a later local date in packages/frontend/src/utils/__tests__/dateUtils.test.js
+- [X] T011 [P] [US2] Add rerender-based TodoCard tests for due date and completion changes in packages/frontend/src/components/__tests__/TodoCard.test.js
+- [X] T012 [P] [US2] Add reference-date boundary tests proving a due-today todo becomes overdue when rendered on a later local date in packages/frontend/src/utils/__tests__/dateUtils.test.js
 
 ### Implementation for User Story 2
 
-- [ ] T013 [US2] Ensure packages/frontend/src/components/TodoCard.js recalculates overdue status from current props on each render after edit or toggle results replace the todo object
-- [ ] T014 [US2] Verify packages/frontend/src/components/TodoList.js preserves API-provided creation-date ordering and does not sort, filter, or group overdue todos
-- [ ] T015 [US2] Confirm packages/frontend/src/services/todoService.js request and response handling remains unchanged with no persisted `isOverdue` field
-- [ ] T016 [US2] Run the focused frontend validation command from specs/001-overdue-todos/quickstart.md against packages/frontend/src/utils/__tests__/dateUtils.test.js and packages/frontend/src/components/__tests__/TodoCard.test.js
+- [X] T013 [US2] Ensure packages/frontend/src/components/TodoCard.js recalculates overdue status from current props on each render after edit or toggle results replace the todo object
+- [X] T014 [US2] Verify packages/frontend/src/components/TodoList.js preserves API-provided creation-date ordering and does not sort, filter, or group overdue todos
+- [X] T015 [US2] Confirm packages/frontend/src/services/todoService.js request and response handling remains unchanged with no persisted `isOverdue` field
+- [X] T016 [US2] Run the focused frontend validation command from specs/001-overdue-todos/quickstart.md against packages/frontend/src/utils/__tests__/dateUtils.test.js and packages/frontend/src/components/__tests__/TodoCard.test.js
 
 **Checkpoint**: User Stories 1 and 2 both work independently and together.
 
@@ -85,10 +85,10 @@ description: "Task list for overdue todo items implementation"
 
 **Purpose**: Final validation, accessibility review, and documentation alignment.
 
-- [ ] T017 [P] Validate the overdue UI contract in specs/001-overdue-todos/contracts/overdue-status-ui.md against packages/frontend/src/components/TodoCard.js and packages/frontend/src/App.css
-- [ ] T018 [P] Confirm existing project documentation remains accurate or update overdue behavior notes in docs/functional-requirements.md and docs/ui-guidelines.md
+- [X] T017 [P] Validate the overdue UI contract in specs/001-overdue-todos/contracts/overdue-status-ui.md against packages/frontend/src/components/TodoCard.js and packages/frontend/src/App.css
+- [X] T018 [P] Confirm existing project documentation remains accurate or update overdue behavior notes in docs/functional-requirements.md and docs/ui-guidelines.md
 - [ ] T019 Run the full workspace test suite described in specs/001-overdue-todos/quickstart.md from package.json
-- [ ] T020 Perform the manual light-theme and dark-theme browser validation checklist from specs/001-overdue-todos/quickstart.md against packages/frontend/src/components/TodoCard.js
+- [ ] T020 Perform the manual light-theme and dark-theme browser validation checklist from specs/001-overdue-todos/quickstart.md against packages/frontend/src/components/TodoCard.js, including timing how quickly the overdue todo is identified in a five-todo list to confirm SC-003
 
 ---
 

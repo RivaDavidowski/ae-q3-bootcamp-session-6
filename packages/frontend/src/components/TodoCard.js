@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import { isTodoOverdue, formatDueDate } from '../utils/dateUtils';
 
 function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editTitle, setEditTitle] = useState(todo.title);
   const [editDueDate, setEditDueDate] = useState(todo.dueDate || '');
   const [editError, setEditError] = useState(null);
+
+  const isOverdue = isTodoOverdue(todo);
 
   const handleToggle = async () => {
     try {
@@ -52,16 +55,6 @@ function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
     }
   };
 
-  const formatDate = (dateString) => {
-    if (!dateString) return null;
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-  };
-
   if (isEditing) {
     return (
       <div className="todo-card todo-card-edit">
@@ -107,7 +100,7 @@ function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
   }
 
   return (
-    <div className={`todo-card ${todo.completed ? 'completed' : ''}`}>
+    <div className={`todo-card ${todo.completed ? 'completed' : ''} ${isOverdue ? 'overdue' : ''}`}>
       <input
         type="checkbox"
         checked={todo.completed === 1}
@@ -118,10 +111,18 @@ function TodoCard({ todo, onToggle, onEdit, onDelete, isLoading }) {
       />
 
       <div className="todo-content">
-        <h3 className="todo-title">{todo.title}</h3>
+        <div className="todo-header">
+          <h3 className="todo-title">{todo.title}</h3>
+          {isOverdue && (
+            <span className="overdue-badge">
+              <span className="overdue-icon" aria-hidden="true">⚠️</span>
+              <span className="overdue-text">Overdue</span>
+            </span>
+          )}
+        </div>
         {todo.dueDate && (
           <p className="todo-due-date">
-            Due: {formatDate(todo.dueDate)}
+            Due: {formatDueDate(todo.dueDate)}
           </p>
         )}
       </div>
